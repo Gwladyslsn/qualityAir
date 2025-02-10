@@ -70,9 +70,23 @@ const backgroundLayer = document.querySelector(".background-layer");
 
 function populateUI(data) {
   emojiLogo.src = `ressources/${data.src}.svg`;
-  userInformation.textContent = `here is ${data.city}situation`;
+  userInformation.textContent = `here is ${data.city} situation`;
   cityName.textContent = data.city;
   pollutionInfo.textContent = data.quality;
   pollutionValue.textContent = data.aqi;
   backgroundLayer.style.backgroundImage = data.background;
+
+  pointerPlacement(data.aqi);
+}
+
+const locationPointer = document.querySelector(".location-pointer");
+
+function pointerPlacement(AQIValue) {
+  const parentWidth = locationPointer.parentElement?.scrollWidth;
+  console.log(parentWidth);
+  console.log(AQIValue / 500);
+  console.log((AQIValue / 500) * parentWidth);
+  locationPointer.style.transform = `translateX(${
+    (AQIValue / 500) * parentWidth
+  }px) rotate(180deg)`;
 }

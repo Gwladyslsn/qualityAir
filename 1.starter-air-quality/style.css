@@ -47,11 +47,11 @@ h1 {
 }
 
 .information-block {
-  max-width: 500px;
+  max-width: 510px;
   margin: 0 auto;
   background-color: #f1f1f1;
   border-radius: 5px;
-  padding: 25px 25px 25px;
+  padding: 25px 25px 40px;
   position: relative;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
