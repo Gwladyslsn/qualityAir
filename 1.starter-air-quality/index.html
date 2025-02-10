@@ -13,7 +13,42 @@
     />
   </head>
   <body>
+    <div class="background-layer"></div>
+    <div class="app-container">
+      <h1>Air Quality app</h1>
+      <div class="information-block">
+        <div class="loader active">
+          <img src="ressources/biodegradable.svg" alt="loader icon" class="loader-logo">
+        </div>
+        <img src="ressources/magnifying-glass.svg" alt="feeling icon" class="emoji-logo">
+        <p class="user-information">Your city information</p>
 
+        <table>
+          <tr>
+            <th class="label">City</th>
+            <td class="city-name">...</td>
+          </tr>
+          <tr>
+            <th class="label">Pollution info</th>
+            <td class="pollution-info">...</td>
+          </tr>
+          <tr>
+            <th class="label">Air quality index</th>
+            <td class="pollution-value">...</td>
+          </tr>
+        </table>
+
+        <p class="scale-bar-text">Pollution scale</p>
+        <div class="scale-container">
+          <img src="ressources/location.svg" alt="location" class="location-pointer"/>
+          <div class="scale-section"></div>
+          <div class="scale-section"></div>
+          <div class="scale-section"></div>
+          <div class="scale-section"></div>
+          <div class="scale-section"></div>
+          <div class="scale-section"></div>
+        </div>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
