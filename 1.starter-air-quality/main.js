@@ -75,17 +75,14 @@ function populateUI(data) {
   pollutionInfo.textContent = data.quality;
   pollutionValue.textContent = data.aqi;
   backgroundLayer.style.backgroundImage = data.background;
-
+  loader.classList.remove("active");
   pointerPlacement(data.aqi);
 }
 
 const locationPointer = document.querySelector(".location-pointer");
 
 function pointerPlacement(AQIValue) {
-  const parentWidth = locationPointer.parentElement?.scrollWidth;
-  console.log(parentWidth);
-  console.log(AQIValue / 500);
-  console.log((AQIValue / 500) * parentWidth);
+  const parentWidth = locationPointer.parentElement.scrollWidth;
   locationPointer.style.transform = `translateX(${
     (AQIValue / 500) * parentWidth
   }px) rotate(180deg)`;
