@@ -47,6 +47,11 @@ async function getPollutionData() {
       "http://api.airvisual.com/v2/nearest_city?key=b7052439-33c5-4cb1-82e9-de3b75cd2708"
     );
 
+    console.log(response);
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}, ${response.statusText}`);
+    }
+
     const responseData = await response.json();
     const aqi = responseData.data.current.pollution.aqius;
 
@@ -58,7 +63,11 @@ async function getPollutionData() {
       ),
     };
     populateUI(sortedData);
-  } catch (error) {}
+  } catch (error) {
+    loader?.classList.remove("active");
+    emojiLogo.src = "./ressources/browser.svg";
+    userInformation.textContent = error.message;
+  }
 }
 
 getPollutionData();
